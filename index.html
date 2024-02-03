@@ -187,11 +187,11 @@ in generating coherent and detailed scenes from intricate textual inputs.
                             <img src="./static/images/iclr_main_figure_revised.png" alt="LLM-Blueprint design" id="design-image"
                                 draggable="false" />
                             <figcaption>
-                                <i>Global Scene Generation</i>: Our proposed approach takes a long text prompt describing a complex
+                                <i>Global Scene Generation:</i> Our proposed approach takes a long text prompt describing a complex
 scene and leverages an LLM to generate k layouts which are then interpolated to a single layout, ensuring
 the spatial accuracy of object placement. Along with the layouts, we also query an LLM to generate object
 descriptions along with a concise background prompt summarizing the scene’s essence. A Layout-to-Image
-model is employed which transforms the layout into an initial image. <i>Iterative Refinement Scheme</i>: The content
+model is employed which transforms the layout into an initial image. <i>Iterative Refinement Scheme:</i> The content
 of each box proposal is refined using a diffusion model conditioned on a box mask, a (generated) reference
 image for the box, and the source image, guided by a multi-modal signal.
                             </figcaption>
@@ -213,7 +213,7 @@ image for the box, and the source image, guided by a multi-modal signal.
                             <img src="./static/images/qualitative_samples_arxiv.png" alt="comparison" id="design-image"
                                 draggable="false" />
                             <figcaption>
-                               <i>Qualitative comaprisons with state-of-the-art methods</i> The underlined text in the text prompts represents the objects, their characteristics,
+                               <i>Qualitative comaprisons with state-of-the-art methods.</i> The underlined text in the text prompts represents the objects, their characteristics,
 and spatial properties. Red text highlights missing objects, purple signifies inaccuracies in object positioning,
 and black text points out implausible or deformed elements. Baseline methods often omit objects and struggle
 with spatial accuracy (first four columns), while our approach excels in capturing all objects and preserving
@@ -224,66 +224,6 @@ spatial attributes (last column)
                 </div>
         </div>
     </section>
-
-
-
-
-<!-- Youtube video -->
-<!-- <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<!-- <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- End video carousel -->
-
-
-
 
 
 
@@ -306,7 +246,12 @@ spatial attributes (last column)
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>@misc{gani2023llm,
+      title={LLM Blueprint: Enabling Text-to-Image Generation with Complex and Detailed Prompts}, 
+      author={Hanan Gani and Shariq Farooq Bhat and Muzammal Naseer and Salman Khan and Peter Wonka},
+      booktitle={Twelfth International Conference on Learning Representations}
+      year={2024}
+}</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
