@@ -187,11 +187,11 @@ in generating coherent and detailed scenes from intricate textual inputs.
                             <img src="./static/images/iclr_main_figure_revised.png" alt="LLM-Blueprint design" id="design-image"
                                 draggable="false" />
                             <figcaption>
-                                *Global Scene Generation:* Our proposed approach takes a long text prompt describing a complex
+                                <em Global Scene Generation: /em> Our proposed approach takes a long text prompt describing a complex
 scene and leverages an LLM to generate k layouts which are then interpolated to a single layout, ensuring
 the spatial accuracy of object placement. Along with the layouts, we also query an LLM to generate object
 descriptions along with a concise background prompt summarizing the scene’s essence. A Layout-to-Image
-model is employed which transforms the layout into an initial image. *Iterative Refinement Scheme:* The content
+model is employed which transforms the layout into an initial image. <em Iterative Refinement Scheme /em>: The content
 of each box proposal is refined using a diffusion model conditioned on a box mask, a (generated) reference
 image for the box, and the source image, guided by a multi-modal signal.
                             </figcaption>
@@ -213,7 +213,7 @@ image for the box, and the source image, guided by a multi-modal signal.
                             <img src="./static/images/qualitative_samples_arxiv.png" alt="comparison" id="design-image"
                                 draggable="false" />
                             <figcaption>
-                               *Qualitative comaprisons with state-of-the-art methods*. The underlined text in the text prompts represents the objects, their characteristics,
+                               <em Qualitative comaprisons with state-of-the-art methods /em>. The underlined text in the text prompts represents the objects, their characteristics,
 and spatial properties. Red text highlights missing objects, purple signifies inaccuracies in object positioning,
 and black text points out implausible or deformed elements. Baseline methods often omit objects and struggle
 with spatial accuracy (first four columns), while our approach excels in capturing all objects and preserving
