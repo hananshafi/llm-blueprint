@@ -133,7 +133,10 @@
         type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+        Aliquam  Current state-of-the-art text-to-image models face challenges when dealing
+with lengthy and detailed text prompts, resulting in the exclusion of objects and fine-grained details.
+Our approach adeptly encompasses all the objects described, preserving their intricate
+features and spatial characteristics as outlined in the two white boxes.
       </h2>
     </div>
   </div>
@@ -148,7 +151,21 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Diffusion-based generative models have significantly advanced text-to-image generation but encounter challenges when processing lengthy and intricate text prompts
+describing complex scenes with multiple objects. While excelling in generating images from short, single-object descriptions, these models often struggle to faithfully
+capture all the nuanced details within longer and more elaborate textual inputs. In
+response, we present a novel approach leveraging Large Language Models (LLMs)
+to extract critical components from text prompts, including bounding box coordinates for foreground objects, detailed textual descriptions for individual objects,
+and a succinct background context. These components form the foundation of
+our layout-to-image generation model, which operates in two phases. The initial
+Global Scene Generation utilizes object layouts and background context to create
+an initial scene but often falls short in faithfully representing object characteristics
+as specified in the prompts. To address this limitation, we introduce an Iterative
+Refinement Scheme that iteratively evaluates and refines box-level content to align
+them with their textual descriptions, recomposing objects as needed to ensure
+consistency. Our evaluation on complex prompts featuring multiple objects demonstrates a substantial improvement in recall compared to baseline diffusion models.
+This is further validated by a user study, underscoring the efficacy of our approach
+in generating coherent and detailed scenes from intricate textual inputs.
           </p>
         </div>
       </div>
@@ -158,6 +175,32 @@
 <!-- End paper abstract -->
 
 
+<!-- Derivation. -->
+    <section class="section">
+        <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <h2 class="title is-3">PromptAlign Design</h2>
+                 </div>
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-three-fourths">
+                        <figure>
+                            <img src="./static/images/iclr_main_figure_revised.png" alt="LLM-Blueprint design" id="design-image"
+                                draggable="false" />
+                            <figcaption>
+                                Global Scene Generation: Our proposed approach takes a long text prompt describing a complex
+scene and leverages an LLM to generate k layouts which are then interpolated to a single layout, ensuring
+the spatial accuracy of object placement. Along with the layouts, we also query an LLM to generate object
+descriptions along with a concise background prompt summarizing the scene’s essence. A Layout-to-Image
+model is employed which transforms the layout into an initial image. Iterative Refinement Scheme: The content
+of each box proposal is refined using a diffusion model conditioned on a box mask, a (generated) reference
+image for the box, and the source image, guided by a multi-modal signal.
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+        </div>
+    </section>
+  
 <!-- Image carousel -->
 <section class="hero is-small">
   <div class="hero-body">
@@ -201,7 +244,7 @@
 
 
 <!-- Youtube video -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <!-- Paper video. -->
@@ -217,12 +260,12 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End youtube video -->
 
 
 <!-- Video carousel -->
-<section class="hero is-small">
+<!-- <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Another Carousel</h2>
@@ -251,7 +294,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End video carousel -->
 
 
@@ -260,7 +303,7 @@
 
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
@@ -270,7 +313,7 @@
         
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
 
 
